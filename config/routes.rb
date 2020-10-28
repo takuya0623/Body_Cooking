@@ -2,21 +2,11 @@ Rails.application.routes.draw do
   
   #admin側のdevise
   namespace :admin do
-  devise_for :admins, controllers: {
-  sessions: 'admin/admins/sessions',
-  registrations: 'admin/admins/registrations',
-  passwords: 'admin/admins/passwords'
-}
+  devise_for :admins
 end
   
 #customer側のdevise
-  scope module: 'user' do
-  devise_for :users, controllers: {
-    sessions: 'user/users/sessions',
-    registrations: 'user/users/registrations',
-    passwords: 'user/users/passwords'
-  }
-end
+ devise_for :users
 # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
 # admin側のルーティング(URLの頭にadminがつく)
